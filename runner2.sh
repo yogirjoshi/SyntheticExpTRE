@@ -8,7 +8,7 @@ dirArg="/home/y2joshi/"
 logFileName=$1
 rm $logFileName
 touch $logFileName
-echo "No,traceLength, alphabetLength, time(milliseconds)">>$logFileName
+echo "No,alphabetLength,traceLength,time">>$logFileName
 for ((i=0; i<${#uniqEvents[*]}; i++));
 do
 python $pyscript $tracelength ${uniqEvents[i]} $noOfTraces $dirArg"S1"${uniqEvents[i]}"/"

@@ -1,5 +1,5 @@
 #!/bin/bash
-tracelength=("10000" "30000" "50000" "70000" "90000")
+tracelength=("1000" "10000" "100000" "1000000" "10000000")
 pyscript="/home/y2joshi/workspace/TRETraceGenerator/test/traceCreate.py"
 uniqEvents=4
 noOfTraces=1
@@ -8,7 +8,7 @@ dirArg="/home/y2joshi/"
 logFileName=$1
 rm $logFileName
 touch $logFileName
-echo "No,traceLength, alphabetLength, time(milliseconds)">>$logFileName
+echo "No,traceLength,alphabetLength,time">>$logFileName
 for ((i=0; i<${#tracelength[*]}; i++));
 do
 	python $pyscript ${tracelength[i]} $uniqEvents $noOfTraces $dirArg"S1"${tracelength[i]}"/"
